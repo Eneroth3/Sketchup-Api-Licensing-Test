@@ -37,10 +37,10 @@ module EneLicensingAPITest
       # originally submitted with.
       ew_identifier = "advanced-camera-tools"# TODO: Replace with the correct sting for this individual extension.
       html = <<-HTML
-        <a href="skp:launchEW@#{ew_identifier}">link</a>
+        <a href="skp:launchEW@#{ew_identifier}">Show in Extension Warehouse (should open automatically)</a>
         <script type="text/javascript">document.getElementsByTagName('a')[0].click();</script>
       HTML
-      dlg = UI::WebDialog.new("TITLE", true, nil, 0, 0, 10000, 0, true)
+      dlg = UI::WebDialog.new(EXTENSION.name, true, nil, 0, 0, 100_000, 0, true)
       dlg.set_html(html)
       dlg.show
 
