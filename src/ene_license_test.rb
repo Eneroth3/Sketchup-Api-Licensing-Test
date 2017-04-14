@@ -8,7 +8,7 @@ require "extensions.rb"
 module EneLicensingAPITest
 
   EXTENSION = SketchupExtension.new(
-    "Eneroth Licensing Api Test",
+    "Eneroth Licensing API Test",
     File.join(File.dirname(__FILE__), File.basename(__FILE__, ".rb"), "main")
   )
   EXTENSION.creator     = "Julia Christina Eneroth"
