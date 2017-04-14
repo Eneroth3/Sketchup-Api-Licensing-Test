@@ -21,12 +21,7 @@ module EneLicensingAPITest
   #
   # Returns Boolean.
   def self.licensed?
-    # Do not store the extension ID in a constant or class variable as these can
-    # be modified. Do not rely on SketchupExtension#id since your reference to
-    # the extension object may have been hijacked. Instead hard-code the ID
-    # wherever it is required.
-    ext_id = "4e215280-dd23-40c4-babb-b8a8dd29d5ee"
-    ext_lic = Sketchup::Licensing.get_extension_license(ext_id)
+    ext_lic = Sketchup::Licensing.get_extension_license(EXTENSION.id)
     unless ext_lic.licensed?
       msg = "#{EXTENSION.name} isn't licensed. Do you want to open the Extension Warehouse to get a license?"
       return unless UI.messagebox(msg, MB_YESNO) == IDYES
