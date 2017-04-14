@@ -27,7 +27,8 @@ module EneLicensingAPITest
       return unless UI.messagebox(msg, MB_YESNO) == IDYES
 
       # HACK: USe an off screen HTMLDialog to open the Extension's page in the
-      # Extension Warehouse. There doesn't seem to be any other way to do this supported by the API.
+      # Extension Warehouse. There doesn't seem to be any other way to do this
+      # supported by the API.
       #
       # Preferably there should be an Extension#view_in_ew class method.
       #
@@ -35,7 +36,7 @@ module EneLicensingAPITest
       # Extension#name or Extension#id but the trailing part of the URL in
       # Extension Warehouse, which is based on the title the extension was
       # originally submitted with.
-      ew_identifier = "advanced-camera-tools"# TODO: Replace with the correct sting for this individual extension.
+      ew_identifier = "eneroth-licensing-api-test"
       html = <<-HTML
         <a href="skp:launchEW@#{ew_identifier}">Show in Extension Warehouse (should open automatically)</a>
         <script type="text/javascript">document.getElementsByTagName('a')[0].click();</script>
@@ -59,7 +60,10 @@ module EneLicensingAPITest
     #
     # Use a locally hard-coded extension id instead of relying on Extension#id,
     # a class variable or constant since these can all be overridden by hackers.
-    ext_id = "4e215280-dd23-40c4-babb-b8a8dd29d5ee"
+    #
+    # Contrary to normal coding conventions the following lines of code SHOULD
+    # be copied into core methods and not be extracted as a method of its own.
+    ext_id = "15dfa30f-4957-4549-8cdb-e97b5727a13a"
     ext_lic = Sketchup::Licensing.get_extension_license(ext_id)
     return unless ext_lic.licensed?
 
