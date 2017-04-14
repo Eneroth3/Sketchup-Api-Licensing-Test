@@ -28,7 +28,7 @@ module EneLicensingAPITest
     ext_id = "4e215280-dd23-40c4-babb-b8a8dd29d5ee"
     ext_lic = Sketchup::Licensing.get_extension_license(ext_id)
     unless ext_lic.licensed?
-      msg = "#{NAME} isn't licensed. Do you want to open the Extension Warehouse to get a license?"
+      msg = "#{EXTENSION.name} isn't licensed. Do you want to open the Extension Warehouse to get a license?"
       return unless UI.messagebox(msg, MB_YESNO) == IDYES
 
       # HACK: USe a HTMLDialog to oprn thr Extenion's page in the Extension
@@ -71,7 +71,7 @@ module EneLicensingAPITest
     file_loaded(__FILE__)
 
     menu = UI.menu("Plugins")
-    menu = menu.add_submenu(NAME)
+    menu = menu.add_submenu(EXTENSION.name)
     menu.add_item("Hello World") { hello_world if licensed?}
   end
 
