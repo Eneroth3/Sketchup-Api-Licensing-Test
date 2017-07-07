@@ -14,7 +14,7 @@ module EneLicensingAPITest
   EXTENSION.creator     = "Julia Christina Eneroth"
   EXTENSION.description = "Experiment to figure out how the licensing API works."
   EXTENSION.version     = "1.0.0"
-  EXTENSION.copyright   = "#{EXTENSION.creator} #{Time.now.year}"
+  EXTENSION.copyright   = "#{EXTENSION.creator} 2017"
   Sketchup.register_extension(EXTENSION, true)
 
 end
